@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { LoginPage } from './PageObjects/LoginPage';
 
 
 test('compras' , async({page}) => {
@@ -54,3 +55,16 @@ test('compras' , async({page}) => {
 
 
 });
+
+test('loginPage',  async({page}) => {
+
+    await page.goto('https://www.saucedemo.com/v1/');
+
+    const login = new LoginPage(page)
+    await login.loginCredenciales('standard_user','secret_sauce')
+    await login.LoginExitoso()
+    
+
+
+}
+)
