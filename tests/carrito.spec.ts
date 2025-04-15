@@ -9,6 +9,7 @@ test('compras' , async({page}) => {
     await page.getByRole('textbox', {name:'Username'}).fill('standard_user')
     await page.getByRole('textbox', {name:'Password'}).fill('secret_sauce')
     await page.getByRole('button', {name:'LOGIN'}).click()
+    await page.screenshot({path: "./captures/" + Date.now() + "screenLogin.jpg" })
     //await page.locator('//input[@id="login-button"]').click();
 
 
